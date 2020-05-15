@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<MAI> 
+  <Student grade="1">  
+        <Name>Андрей</Name>
+        <Id>3674</Id>
+        <Age>21</Age>
+		<Year>1999</Year>		
+  </Student>
+  <Student grade="3">   
+        <Name>Анна</Name>
+        <Id>3675</Id>
+        <Age>24</Age>
+		<Year>1996</Year>
+  </Student>    
+  <Student grade="2">
+        <Name>Иван</Name>
+        <Id>3676</Id>
+        <Age>22</Age>
+		<Year>1998</Year>		
+   </Student>
+</MAI>
