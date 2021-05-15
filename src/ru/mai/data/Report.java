@@ -14,7 +14,7 @@ public class Report {
     private double averageAge = 0;
 
     /**
-     * Список имен студентов старше 1996 г.р.
+     * Список имен студентов старше 1999 г.р.
      */
     private ArrayList<String> namesOlderList = new ArrayList<>();
 

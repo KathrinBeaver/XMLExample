@@ -21,13 +21,14 @@ import java.util.logging.Logger;
  */
 public class StudentsXMLParser {
 
+    private static final int REPORT_YEAR = 1999;
     /**
      * Список имен студентов
      */
     private static final ArrayList<String> namesList = new ArrayList<>();
 
     /**
-     * Список имен студентов старше 1996 г.р.
+     * Список имен студентов старше 1999 г.р.
      */
     private static final ArrayList<String> namesOlderList = new ArrayList<>();
 
@@ -100,7 +101,7 @@ public class StudentsXMLParser {
                             } else if (e.getNodeName().equals("Year")) {
                                 try {
                                     int year = Integer.parseInt(getValue(e.getNodeName(), element));
-                                    if (year < 1996) {
+                                    if (year < REPORT_YEAR) {
                                         namesOlderList.add(name);
                                     }
                                     student.setYear(Integer.parseInt(getValue(e.getNodeName(), element)));
