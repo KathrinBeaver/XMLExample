@@ -1,17 +1,23 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
-<MAI> 
-  <Student grade="1">  
+<MAI>
+    <!--
+        Comments
+    -->
+  <Student grade="1">
         <Name>Андрей</Name>
         <Id>3674</Id>
         <Age>21</Age>
-		<Year>1999</Year>		
+		<Year>1999</Year>
+        <bbb>bbb</bbb>
+        <ccc>cccc</ccc>
   </Student>
-  <Student grade="3">   
+  <Student grade="3" attr="111" attr2="aaaaa">
         <Name>Анна</Name>
         <Id>3675</Id>
         <Age>24</Age>
 		<Year>1996</Year>
-  </Student>    
+        <aaa>aaaa</aaa>
+  </Student>
   <Student grade="2">
         <Name>Иван</Name>
         <Id>3676</Id>
@@ -19,3 +25,5 @@
 		<Year>1998</Year>		
    </Student>
 </MAI>
+
+

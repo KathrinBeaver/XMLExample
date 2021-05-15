@@ -1,5 +1,7 @@
 package ru.mai.data;
 
+import java.util.Map;
+
 /**
  * Описание студента
  *
@@ -26,6 +28,8 @@ public class Student implements Comparable<Student> {
      * Год рождения
      */
     private int year = 0;
+
+    private Map<String, String> attributes;
 
     public Student() {
 

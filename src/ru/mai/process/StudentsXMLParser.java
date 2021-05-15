@@ -81,9 +81,11 @@ public class StudentsXMLParser {
 
                     for (int j = 0; j < children.getLength(); j++) {
                         Node e = children.item(j);
+
                         if (e.getNodeType() == Node.ELEMENT_NODE) {
 
                             System.out.println(e.getNodeName() + ": " + getValue(e.getNodeName(), element));
+
                             if (e.getNodeName().equals("Name")) {
                                 name = getValue(e.getNodeName(), element);
                                 namesList.add(name);
@@ -98,7 +100,7 @@ public class StudentsXMLParser {
                             } else if (e.getNodeName().equals("Year")) {
                                 try {
                                     int year = Integer.parseInt(getValue(e.getNodeName(), element));
-                                    if (year <= 1996) {
+                                    if (year < 1996) {
                                         namesOlderList.add(name);
                                     }
                                     student.setYear(Integer.parseInt(getValue(e.getNodeName(), element)));

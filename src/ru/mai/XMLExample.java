@@ -4,6 +4,7 @@ import ru.mai.data.Report;
 import ru.mai.process.ReportCreator;
 import ru.mai.process.StudentsXMLParser;
 
+
 /**
  * Пример работы с XML
  */
@@ -18,4 +19,5 @@ public class XMLExample {
         Report report = parser.createReport();
         ReportCreator.displayReport(report);
     }
+
 }
