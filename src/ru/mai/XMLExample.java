@@ -4,7 +4,6 @@ import ru.mai.data.Report;
 import ru.mai.process.ReportCreator;
 import ru.mai.process.StudentsXMLParser;
 
-
 /**
  * Пример работы с XML
  */

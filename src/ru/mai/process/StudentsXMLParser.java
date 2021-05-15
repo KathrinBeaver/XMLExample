@@ -8,6 +8,7 @@ import ru.mai.data.Student;
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
 import javax.xml.parsers.ParserConfigurationException;
+import javax.xml.xpath.*;
 import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
@@ -60,6 +61,9 @@ public class StudentsXMLParser {
 
             System.out.println("Root of xml file: " + doc.getDocumentElement().getNodeName());
             NodeList nodes = doc.getElementsByTagName("Student");
+
+            searchByAge(doc);
+
             System.out.println("==========================");
 
             for (int i = 0; i < nodes.getLength(); i++) {
@@ -128,6 +132,37 @@ public class StudentsXMLParser {
         } catch (IOException ex) {
             Logger.getLogger(StudentsXMLParser.class.getName()).log(Level.SEVERE, null, ex);
         }
+    }
+
+    /**
+     * Пример поиска с помощью xPath
+     * https://msiter.ru/tutorials/xpath
+     *
+     * @param doc - объект XML-документа
+     */
+    private void searchByAge(Document doc) {
+        System.out.println("Печать элементов Book у которых значение Cost > 4");
+        XPathFactory pathFactory = XPathFactory.newInstance();
+        XPath xpath = pathFactory.newXPath();
+        XPathExpression expr = null;
+        try {
+            expr = xpath.compile("MAI/Student[Age>22]");
+        } catch (XPathExpressionException e) {
+            Logger.getLogger(StudentsXMLParser.class.getName()).log(Level.SEVERE, null, e);
+        }
+
+        NodeList nodes = null;
+        try {
+            nodes = (NodeList) expr.evaluate(doc, XPathConstants.NODESET);
+        } catch (XPathExpressionException e) {
+            Logger.getLogger(StudentsXMLParser.class.getName()).log(Level.SEVERE, null, e);
+        }
+        for (int i = 0; i < nodes.getLength(); i++) {
+            Node n = nodes.item(i);
+            System.out.println("Value:" + n.getTextContent());
+        }
+
+        System.out.println();
     }
 
     private String getValue(String tag, Element element) {
