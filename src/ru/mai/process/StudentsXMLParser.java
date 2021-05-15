@@ -12,6 +12,8 @@ import javax.xml.xpath.*;
 import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -83,6 +85,7 @@ public class StudentsXMLParser {
 
                     String name = null;
                     Student student = new Student();
+                    Map<String, String> attrs = new HashMap<>();
 
                     for (int j = 0; j < children.getLength(); j++) {
                         Node e = children.item(j);
@@ -118,10 +121,12 @@ public class StudentsXMLParser {
                                 } catch (NumberFormatException ex) {
                                     System.out.println("Ошибка преобразования возраста");
                                 }
+                            } else {
+                                attrs.put(e.getNodeName(), getValue(e.getNodeName(), element));
                             }
                         }
                     }
-
+                    student.setAttributes(attrs);
                     studentsList.add(student);
                 }
             }
@@ -141,7 +146,6 @@ public class StudentsXMLParser {
      * @param doc - объект XML-документа
      */
     private void searchByAge(Document doc) {
-        System.out.println("Печать элементов Book у которых значение Cost > 4");
         XPathFactory pathFactory = XPathFactory.newInstance();
         XPath xpath = pathFactory.newXPath();
         XPathExpression expr = null;

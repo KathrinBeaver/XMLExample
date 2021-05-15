@@ -29,6 +29,14 @@ public class Student implements Comparable<Student> {
      */
     private int year = 0;
 
+    public Map<String, String> getAttributes() {
+        return attributes;
+    }
+
+    public void setAttributes(Map<String, String> attributes) {
+        this.attributes = attributes;
+    }
+
     private Map<String, String> attributes;
 
     public Student() {
@@ -64,7 +72,9 @@ public class Student implements Comparable<Student> {
 
     @Override
     public String toString() {
-        return "id = " + id + "; " + name + "; age = " + age + "; year = " + year;
+        return "id = " + id + "; " + name
+                + "; age = " + age + "; year = "
+                + year + "; attrs = " +  attributes.toString();
     }
 
     @Override

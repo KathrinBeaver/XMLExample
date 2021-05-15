@@ -2,6 +2,14 @@
 <MAI>
     <!--
         Comments
+
+        Сущность	Символ	Значение
+        &lt;	<	меньше, чем
+        &gt;	>	больше, чем
+        &amp;	&	амперсанд
+        &apos;	'	апостроф
+        &quot;	"	кавычки
+
     -->
   <Student grade="1">
         <Name>Андрей</Name>
@@ -9,21 +17,25 @@
         <Age>21</Age>
 		<Year>1999</Year>
         <bbb>bbb</bbb>
-        <ccc>cccc</ccc>
+        <ccc><![CDATA[ 3 < 5]]></ccc>
   </Student>
   <Student grade="3" attr="111" attr2="aaaaa">
         <Name>Анна</Name>
         <Id>3675</Id>
         <Age>24</Age>
 		<Year>1996</Year>
-        <aaa>aaaa</aaa>
+        <aaa>aa &lt; aa</aaa>
   </Student>
   <Student grade="2">
         <Name>Иван</Name>
         <Id>3676</Id>
         <Age>22</Age>
-		<Year>1998</Year>		
+<!--        <age>22</age>-->
+		<Year>1998</Year>
+        <EmptyTag> </EmptyTag>
+<!--        <EmptyTag/>-->
    </Student>
 </MAI>
+
 
 

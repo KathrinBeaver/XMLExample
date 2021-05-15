@@ -18,5 +18,4 @@ public class XMLExample {
         Report report = parser.createReport();
         ReportCreator.displayReport(report);
     }
-
 }
